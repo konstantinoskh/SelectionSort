@@ -1,7 +1,7 @@
 package com.company;
 
 public class Main {
-
+ //heeeheee heehha
     public static void main(String[] args) {
         int[] numbers = {4, 5, 6, 7, 2, 5, 8, 3, 2, 5, 6};
         int minimum = numbers[0]; //hold the minimum number
