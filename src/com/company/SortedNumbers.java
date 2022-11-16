@@ -1,9 +1,28 @@
 package com.company;
 
-public class Main {
-    private static int[] numbers = {22, 13, 10, 80, 19, 54, 51, 81, 30, 99, 91, 73, 65, 36, 35, 74, 82, 12, 43, 6};
+public class SortedNumbers {
+    private int[] numbers;
+    private int firstFree;
 
-    public static void selectionSort(){
+    public SortedNumbers(int size) {
+        numbers = new int[size];
+        firstFree = 0;
+    }
+
+    public void addNumber(int n){
+        //add a new element preserving the sorted form
+        if (firstFree< numbers.length){
+            numbers[firstFree] = n;
+            firstFree++;
+            selectionSort();
+        }
+    }
+    //print the amount of elements
+    public int size(){
+        return firstFree;
+    }
+
+    public void selectionSort(){
 
         for (int unsortedPos=0; unsortedPos < numbers.length-1; unsortedPos++){
             int minPos = unsortedPos;
@@ -23,8 +42,4 @@ public class Main {
         }
         System.out.println();
     }
-    public static void main(String[] args){
-    selectionSort();
-    }
 }
-
